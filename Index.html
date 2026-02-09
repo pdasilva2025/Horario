@@ -4,30 +4,117 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Horarios – IE Sagrado Corazón de Jesús</title>
+
   <style>
-    body{font-family:Arial,Helvetica,sans-serif;background:#f4f6f9;margin:0;padding:20px}
-    h1,h2{margin:10px 0;color:#1f2937}
-    .tabs{display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap}
-    .tab{padding:10px 15px;border-radius:8px;background:#e5e7eb;cursor:pointer;font-weight:bold}
-    .tab.active{background:#2563eb;color:#fff}
+    /* ===== BASE ===== */
+    body{
+      font-family: Arial, Helvetica, sans-serif;
+      background:#f4f6f9;
+      margin:0;
+      padding:12px;
+    }
+
+    h1,h2{
+      margin:10px 0;
+      color:#1f2937;
+      text-align:center;
+    }
+
+    /* ===== TABS ===== */
+    .tabs{
+      display:flex;
+      gap:8px;
+      margin-bottom:16px;
+      flex-wrap:wrap;
+    }
+
+    .tab{
+      flex:1;
+      padding:12px 8px;
+      border-radius:10px;
+      background:#e5e7eb;
+      cursor:pointer;
+      font-weight:bold;
+      text-align:center;
+      font-size:14px;
+      user-select:none;
+    }
+
+    .tab.active{
+      background:#2563eb;
+      color:#fff;
+    }
+
+    /* ===== PANELS ===== */
     .panel{display:none}
     .panel.active{display:block}
-    table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,.08)}
-    .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-    th,td{border:1px solid #e5e7eb;padding:10px;text-align:center;font-size:14px}
-    th{background:#2563eb;color:#fff}
-    caption{padding:10px;font-weight:bold}
-    .note{margin-top:15px;background:#ecfeff;border-left:4px solid #06b6d4;padding:10px;border-radius:6px}
-  @media (max-width: 600px){
+
+    /* ===== TABLE RESPONSIVE ===== */
+    .table-wrap{
+      width:100%;
+      overflow-x:auto;
+      -webkit-overflow-scrolling:touch;
+      margin-bottom:12px;
+    }
+
+    table{
+      width:100%;
+      min-width:720px; /* fuerza scroll horizontal en celular */
+      border-collapse:collapse;
+      background:#fff;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,.08);
+    }
+
+    th,td{
+      border:1px solid #e5e7eb;
+      padding:8px;
+      text-align:center;
+      font-size:13px;
+      white-space:nowrap;
+    }
+
+    th{
+      background:#2563eb;
+      color:#fff;
+    }
+
+    caption{
+      padding:10px;
+      font-weight:bold;
+    }
+
+    .note{
+      margin-top:12px;
+      background:#ecfeff;
+      border-left:4px solid #06b6d4;
+      padding:10px;
+      border-radius:6px;
+      font-size:13px;
+    }
+
+    /* ===== MOBILE TUNING ===== */
+    @media (max-width: 600px){
+      body{
+        padding:8px;
+      }
+
       h1{font-size:18px}
       h2{font-size:16px}
-      .tabs{gap:6px}
-      .tab{flex:1;text-align:center;padding:10px;font-size:14px}
-      table{font-size:13px}
-      th,td{padding:8px}
+
+      .tab{
+        font-size:13px;
+        padding:12px 6px;
+      }
+
+      th,td{
+        font-size:12px;
+        padding:6px;
+      }
     }
   </style>
 </head>
+
 <body>
 
 <h1>Horarios Académicos 2026</h1>
@@ -38,76 +125,43 @@
   <div class="tab" onclick="showPanel('horas', this)">Horas Académicas</div>
 </div>
 
-<!-- GRADO 804 -->
+<!-- ===== GRADO 804 ===== -->
 <div id="g804" class="panel active">
   <h2>Horario Grado 804</h2>
-  <div class="table-wrap"><table>
-    <tr>
-      <th>Día</th>
-      <th>1<br><small>6:30–7:25</small></th>
-      <th>2<br><small>7:25–8:20</small></th>
-      <th>3<br><small>8:20–9:15</small></th>
-      <th style="background:#fde68a;color:#92400e">DESCANSO<br><small>9:15–9:45</small><br><small>(no cuenta como hora)</small></th>
-      <th>4<br><small>9:45–10:40</small></th>
-      <th>5<br><small>10:40–11:35</small></th>
-      <th>6<br><small>11:35–12:30</small></th>
-    </tr>
-    <tr><td>Lunes</td><td>Inglés</td><td>Inglés</td><td>C. Naturales</td><td></td><td>C. Naturales</td><td>C. Sociales</td><td>C. Sociales</td></tr>
-    <tr><td>Martes</td><td>Español</td><td>Español</td><td>Fund. Turismo</td><td></td><td>Fund. Turismo</td><td>Artes</td><td>Artes</td></tr>
-    <tr><td>Miércoles</td><td>Matemáticas</td><td>Matemáticas</td><td>Ed. Física</td><td></td><td>Ed. Física</td><td>C. Sociales</td><td>C. Sociales</td></tr>
-    <tr><td>Jueves</td><td>Español</td><td>Español</td><td>Español</td><td></td><td>Religión</td><td>C. Naturales</td><td>C. Naturales</td></tr>
-    <tr><td>Viernes</td><td>Portugués</td><td>Ética</td><td>Matemáticas</td><td></td><td>Matemáticas</td><td>TICS</td><td>TICS</td></tr>
-  </table></div>
+  <div class="table-wrap">
+    <table>
+      <tr>
+        <th>Día</th>
+        <th>1<br><small>6:30–7:25</small></th>
+        <th>2<br><small>7:25–8:20</small></th>
+        <th>3<br><small>8:20–9:15</small></th>
+        <th style="background:#fde68a;color:#92400e">DESCANSO<br><small>9:15–9:45</small></th>
+        <th>4<br><small>9:45–10:40</small></th>
+        <th>5<br><small>10:40–11:35</small></th>
+        <th>6<br><small>11:35–12:30</small></th>
+      </tr>
+      <tr><td>Lunes</td><td>Inglés</td><td>Inglés</td><td>C. Naturales</td><td></td><td>C. Naturales</td><td>C. Sociales</td><td>C. Sociales</td></tr>
+      <tr><td>Martes</td><td>Español</td><td>Español</td><td>Fund. Turismo</td><td></td><td>Fund. Turismo</td><td>Artes</td><td>Artes</td></tr>
+      <tr><td>Miércoles</td><td>Matemáticas</td><td>Matemáticas</td><td>Ed. Física</td><td></td><td>Ed. Física</td><td>C. Sociales</td><td>C. Sociales</td></tr>
+      <tr><td>Jueves</td><td>Español</td><td>Español</td><td>Español</td><td></td><td>Religión</td><td>C. Naturales</td><td>C. Naturales</td></tr>
+      <tr><td>Viernes</td><td>Portugués</td><td>Ética</td><td>Matemáticas</td><td></td><td>Matemáticas</td><td>TICS</td><td>TICS</td></tr>
+    </table>
+  </div>
 </div>
 
-<!-- PROFESOR -->
+<!-- ===== PROFESOR ===== -->
 <div id="profe" class="panel">
-  <h2>Horario Profesor Pablo Dasilva – Tecnología (TICS)</h2>
-  <div class="table-wrap"><table>
-    <tr>
-      <th>Día</th>
-      <th>1<br><small>6:30–7:25</small></th>
-      <th>2<br><small>7:25–8:20</small></th>
-      <th>3<br><small>8:20–9:15</small></th>
-      <th style="background:#fde68a;color:#92400e">DESCANSO<br><small>9:15–9:45</small><br><small>(no cuenta como hora)</small></th>
-      <th>4<br><small>9:45–10:40</small></th>
-      <th>5<br><small>10:40–11:35</small></th>
-      <th>6<br><small>11:35–12:30</small></th>
-    </tr>
-    <tr><td>Lunes</td><td></td><td></td><td>903</td><td></td><td>903</td><td>902</td><td>902</td></tr>
-    <tr><td>Martes</td><td>801</td><td>801</td><td>601</td><td></td><td>601</td><td></td><td></td></tr>
-    <tr><td>Miércoles</td><td>904</td><td>904</td><td>802</td><td></td><td>802</td><td>602</td><td>602</td></tr>
-    <tr><td>Jueves</td><td>705</td><td>705</td><td>803</td><td></td><td>803</td><td></td><td></td></tr>
-    <tr><td>Viernes</td><td>901</td><td>901</td><td></td><td></td><td></td><td>804</td><td>804</td></tr>
-  </table></div>
-</div>
-
-<!-- HORAS -->
-<div id="horas" class="panel">
-  <h2>Horas Académicas Oficiales</h2>
-  <div class="table-wrap"><table>
-    <tr><th>Hora</th><th>Horario</th></tr>
-    <tr><td>Primera</td><td>6:30 – 7:25 a. m.</td></tr>
-    <tr><td>Segunda</td><td>7:25 – 8:20 a. m.</td></tr>
-    <tr><td>Tercera</td><td>8:20 – 9:15 a. m.</td></tr>
-    <tr><td colspan="2"><strong>Descanso: 9:15 – 9:45 a. m.</strong></td></tr>
-    <tr><td>Cuarta</td><td>9:45 – 10:40 a. m.</td></tr>
-    <tr><td>Quinta</td><td>10:40 – 11:35 a. m.</td></tr>
-    <tr><td>Sexta</td><td>11:35 – 12:30 p. m.</td></tr>
-  </table></div>
-  <div class="note">Este horario está listo para subirse a un hosting, intranet escolar o Google Sites.</div>
-</div>
-
-<script>
-  function showPanel(id, el){
-    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    if(el){ el.classList.add('active'); }
-  }
-</script>
-
-</body>
-</html>
-
-
+  <h2>Horario Profesor Pablo Dasilva – Tecnología</h2>
+  <div class="table-wrap">
+    <table>
+      <tr>
+        <th>Día</th>
+        <th>1</th><th>2</th><th>3</th>
+        <th style="background:#fde68a;color:#92400e">DESCANSO</th>
+        <th>4</th><th>5</th><th>6</th>
+      </tr>
+      <tr><td>Lunes</td><td></td><td></td><td>903</td><td></td><td>903</td><td>902</td><td>902</td></tr>
+      <tr><td>Martes</td><td>801</td><td>801</td><td>601</td><td></td><td>601</td><td></td><td></td></tr>
+      <tr><td>Miércoles</td><td>904</td><td>904</td><td>802</td><td></td><td>802</td><td>602</td><td>602</td></tr>
+      <tr><td>Jueves</td><td>705</td><td>705</td><td>803</td><td></td><td>803</td><td></td><td></td></tr>
+      <tr><td>Viernes</td><td>901</td><td>901</td><td></td><td></td><td></td><td>804</
