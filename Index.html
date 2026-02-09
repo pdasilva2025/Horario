@@ -6,7 +6,6 @@
   <title>Horarios – IE Sagrado Corazón de Jesús</title>
 
   <style>
-    /* ===== BASE ===== */
     body{
       font-family: Arial, Helvetica, sans-serif;
       background:#f4f6f9;
@@ -20,7 +19,6 @@
       text-align:center;
     }
 
-    /* ===== TABS ===== */
     .tabs{
       display:flex;
       gap:8px;
@@ -37,7 +35,6 @@
       font-weight:bold;
       text-align:center;
       font-size:14px;
-      user-select:none;
     }
 
     .tab.active{
@@ -45,11 +42,9 @@
       color:#fff;
     }
 
-    /* ===== PANELS ===== */
     .panel{display:none}
     .panel.active{display:block}
 
-    /* ===== TABLE RESPONSIVE ===== */
     .table-wrap{
       width:100%;
       overflow-x:auto;
@@ -59,7 +54,7 @@
 
     table{
       width:100%;
-      min-width:720px; /* fuerza scroll horizontal en celular */
+      min-width:720px;
       border-collapse:collapse;
       background:#fff;
       border-radius:12px;
@@ -79,11 +74,6 @@
       color:#fff;
     }
 
-    caption{
-      padding:10px;
-      font-weight:bold;
-    }
-
     .note{
       margin-top:12px;
       background:#ecfeff;
@@ -93,24 +83,12 @@
       font-size:13px;
     }
 
-    /* ===== MOBILE TUNING ===== */
-    @media (max-width: 600px){
-      body{
-        padding:8px;
-      }
-
+    @media (max-width:600px){
+      body{padding:8px}
       h1{font-size:18px}
       h2{font-size:16px}
-
-      .tab{
-        font-size:13px;
-        padding:12px 6px;
-      }
-
-      th,td{
-        font-size:12px;
-        padding:6px;
-      }
+      .tab{font-size:13px;padding:12px 6px}
+      th,td{font-size:12px;padding:6px}
     }
   </style>
 </head>
@@ -125,20 +103,15 @@
   <div class="tab" onclick="showPanel('horas', this)">Horas Académicas</div>
 </div>
 
-<!-- ===== GRADO 804 ===== -->
+<!-- GRADO -->
 <div id="g804" class="panel active">
   <h2>Horario Grado 804</h2>
   <div class="table-wrap">
     <table>
       <tr>
-        <th>Día</th>
-        <th>1<br><small>6:30–7:25</small></th>
-        <th>2<br><small>7:25–8:20</small></th>
-        <th>3<br><small>8:20–9:15</small></th>
-        <th style="background:#fde68a;color:#92400e">DESCANSO<br><small>9:15–9:45</small></th>
-        <th>4<br><small>9:45–10:40</small></th>
-        <th>5<br><small>10:40–11:35</small></th>
-        <th>6<br><small>11:35–12:30</small></th>
+        <th>Día</th><th>1</th><th>2</th><th>3</th>
+        <th style="background:#fde68a;color:#92400e">DESCANSO</th>
+        <th>4</th><th>5</th><th>6</th>
       </tr>
       <tr><td>Lunes</td><td>Inglés</td><td>Inglés</td><td>C. Naturales</td><td></td><td>C. Naturales</td><td>C. Sociales</td><td>C. Sociales</td></tr>
       <tr><td>Martes</td><td>Español</td><td>Español</td><td>Fund. Turismo</td><td></td><td>Fund. Turismo</td><td>Artes</td><td>Artes</td></tr>
@@ -149,14 +122,13 @@
   </div>
 </div>
 
-<!-- ===== PROFESOR ===== -->
+<!-- PROFESOR -->
 <div id="profe" class="panel">
-  <h2>Horario Profesor Pablo Dasilva – Tecnología</h2>
+  <h2>Horario Profesor Pablo Dasilva</h2>
   <div class="table-wrap">
     <table>
       <tr>
-        <th>Día</th>
-        <th>1</th><th>2</th><th>3</th>
+        <th>Día</th><th>1</th><th>2</th><th>3</th>
         <th style="background:#fde68a;color:#92400e">DESCANSO</th>
         <th>4</th><th>5</th><th>6</th>
       </tr>
@@ -164,4 +136,37 @@
       <tr><td>Martes</td><td>801</td><td>801</td><td>601</td><td></td><td>601</td><td></td><td></td></tr>
       <tr><td>Miércoles</td><td>904</td><td>904</td><td>802</td><td></td><td>802</td><td>602</td><td>602</td></tr>
       <tr><td>Jueves</td><td>705</td><td>705</td><td>803</td><td></td><td>803</td><td></td><td></td></tr>
-      <tr><td>Viernes</td><td>901</td><td>901</td><td></td><td></td><td></td><td>804</
+      <tr><td>Viernes</td><td>901</td><td>901</td><td></td><td></td><td></td><td>804</td><td>804</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- HORAS -->
+<div id="horas" class="panel">
+  <h2>Horas Académicas</h2>
+  <div class="table-wrap">
+    <table>
+      <tr><th>Hora</th><th>Horario</th></tr>
+      <tr><td>Primera</td><td>6:30 – 7:25</td></tr>
+      <tr><td>Segunda</td><td>7:25 – 8:20</td></tr>
+      <tr><td>Tercera</td><td>8:20 – 9:15</td></tr>
+      <tr><td colspan="2"><strong>Descanso 9:15 – 9:45</strong></td></tr>
+      <tr><td>Cuarta</td><td>9:45 – 10:40</td></tr>
+      <tr><td>Quinta</td><td>10:40 – 11:35</td></tr>
+      <tr><td>Sexta</td><td>11:35 – 12:30</td></tr>
+    </table>
+  </div>
+  <div class="note">Horario optimizado para celular y Google Sites.</div>
+</div>
+
+<script>
+function showPanel(id, el){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  el.classList.add('active');
+}
+</script>
+
+</body>
+</html>
